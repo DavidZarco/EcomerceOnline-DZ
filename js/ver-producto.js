@@ -5,8 +5,10 @@ function renderProducto(){
         <img src="${producto.imagen}" class="img-fluid" alt="${producto.nombre}">
         </div>
         <div class= "col-md-4">
-            <h3>${producto.nombre}</h3>
-            <h4 class= "text-danger">$${producto.precio}</h4>
+            <p class="text-body-tertiary">${producto.marca}</p>
+            <h3 class="text-secondary">${producto.nombre}</h3>
+            <h4 class= "text-primary">$${producto.precio}</h4>
+            <button class= "btn btn-danger my-5">Agregar (+)</button>
         </div>
     </div>`;
     document.getElementById("contenido").innerHTML = contenido;
