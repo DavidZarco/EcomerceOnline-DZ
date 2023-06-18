@@ -16,3 +16,4 @@ function renderProducto(){
 
 }
 renderProducto();
+renderBotonCarrito();
