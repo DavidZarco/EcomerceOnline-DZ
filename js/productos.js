@@ -20,15 +20,3 @@ function cargarProductosLS(){
 }
 
 guardarProductosLS();
-
-function guardarCarritoLS() {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-function cargarCarritoLS(){
-    return JSON.parse(localStorage.getItem("carrito")) || [];
-}
-
-
-function agregarProducto(id) {
-    
-}

@@ -4,15 +4,14 @@ function renderProductos(){
 
     productos.forEach(producto => {
         contenido += `<div class= "col-md-3 mb-4">
-        <a href="ver-producto.html" onClick="verProducto(${producto.id}) class="text-decoration-none" >
         <div class="card text-center">
             <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
             <div class="card-body">
                 <p class="card-text text-danger">$${producto.precio}</p>
                 <p>${producto.nombre}</p>
+                <p><button class="btn btn-primary" onClick="verProducto(${producto.id});">Ver Producto</button></p>
             </div>
         </div>
-      </a>
       </div>`;
         
     });
@@ -22,11 +21,11 @@ function renderProductos(){
 
 function verProducto(id){
     let productos = cargarProductosLS(); 
-    let producto = productos.find(item => item.id == id);
+    let producto = productos.find(item => item.id === id);
     localStorage.setItem("producto", JSON.stringify(producto));
+    location.href = "ver-producto.html"; //Redireccionar a la página pasada por parámetro
     
 
 }
 
 renderProductos();
-renderBotonCarrito();
