@@ -11,7 +11,6 @@ function renderProductos(){
                 <p>${producto.nombre}</p>
                 <p><button class="btn btn-primary" onClick="verProducto(${producto.id});">Ver Producto</button></p>
                 <p><button class="btn btn-success" onClick="agregarProducto(${producto.id});">Añadir al Carrito</button></p>
-
             </div>
         </div>
       </div>`;
