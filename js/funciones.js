@@ -16,7 +16,6 @@ function cargarCarritoLS() {
 
 function buscarProducto(id) {
     const productos = cargarProductosLS();
-    
     return productos.find(item => item.id === id);
 }
 
@@ -30,7 +29,7 @@ function agregarProducto(id) {
 
 function eliminarProducto(id) {
     const carrito = cargarCarritoLS();
-    const nuevoCarrito = carrito.filter(item => item.id != id)
+    const nuevoCarrito = carrito.filter(item => item.id != id);
     guardarCarritoLS(nuevoCarrito);
     renderBotonCarrito();
     renderProductos();
@@ -44,21 +43,18 @@ function vaciarCarrito() {
 
 function cantidadTotalProductos() {
     const carrito = cargarCarritoLS();
-
-    //return carrito.reduce((acumulador, item) => acumulador += item, 0);
     return carrito.length;
 }
 
 function sumaTotalProductos() {
     const carrito = cargarCarritoLS();
-
     return carrito.reduce((acumulador, item) => acumulador += item.precio, 0);
 }
 
 function renderBotonCarrito() {
     let botonCarrito = document.getElementById("botonCarrito");
     let contenido = `<button type="button" class="btn bg-light position-relative">
-    <img src="images/cart2.svg" alt="Carrito" width="32">
+    <img src="./images/botoncarrito.svg" alt="Carrito" width="32">
     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
     ${cantidadTotalProductos()}
     </span>

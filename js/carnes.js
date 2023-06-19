@@ -4,7 +4,7 @@ function renderProductos(){
 
     productos.forEach(producto => {
         contenido += `<div class= "col-md-3 mb-4">
-        <div class="card text-center">
+        <div class="card text-center h-100">
             <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
             <div class="card-body">
                 <p class="card-text text-danger">$${producto.precio}</p>
@@ -29,3 +29,4 @@ function verProducto(id){
 }
 
 renderProductos();
+renderBotonCarrito();

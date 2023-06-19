@@ -9,14 +9,3 @@ const productos = [
     {id:8, nombre:"Hamburguesa Swift clásica 4 u.", imagen: "https://carrefourar.vtexassets.com/arquivos/ids/176790-1200-auto?v=637468574363170000&width=1200&height=auto&aspect=true" , precio:1005.00, marca:"SWIFT"}
 
 ];
-
-
-
-function guardarProductosLS() {
-    localStorage.setItem("productos", JSON.stringify(productos));
-}
-function cargarProductosLS(){
-    return JSON.parse(localStorage.getItem("productos"));
-}
-
-guardarProductosLS();
