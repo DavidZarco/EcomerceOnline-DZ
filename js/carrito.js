@@ -5,7 +5,7 @@ function renderProductos() {
     if (cantidadTotalProductos() > 0) {
         contenido += `<table class="table">`;
         contenido += `<tr>
-        <td colspan="3">&nbsp;</td>  
+        <td colspan="4">&nbsp</td>  
         <td class="text-end"><button class="btn bg-light btn-sm" onclick="vaciarCarrito();" title="Vaciar Carrito">Vaciar Carrito X</button></td>
         </tr>`;
 
@@ -13,16 +13,17 @@ function renderProductos() {
             contenido += `<tr>
             <td><img src="${producto.imagen}" alt="${producto.nombre}" width="48"></td>
             <td class="align-middle">${producto.nombre}</td>
-            <td class="align-middle"><b>$${producto.precio}</b></td>
-            <td class="align-middle text-end"><button><img src="images/iconodebasura.svg" alt="Eliminar Producto" title="Eliminar Producto" width="24" onclick="eliminarProducto(${producto.id});"></button></td>
+            <td class="align-middle text-end"><b>${producto.cantidad} X $${producto.precio.toFixed(2)}</b></td>
+            <td class="align-middle text-end"><b>$${(producto.precio * producto.cantidad).toFixed(2)}</b></td>
+            <td class="align-middle text-end"><button><img src="../images/iconodebasura.svg" alt="Eliminar Producto" title="Eliminar Producto" width="24" onclick="eliminarProducto(${producto.id});"></button></td>
             </tr>
             </div>`;
         });
 
         contenido += `<tr>
         <td>&nbsp;</td>
-        <td>Saldo Total</td>
-        <td><b>$${sumaTotalProductos()}</b></td>    
+        <td colspan="2">Saldo Total</td>
+        <td class="text-end"><b>$${sumaTotalProductos().toFixed(2)}</b></td>    
         <td>&nbsp;</td>
         </tr>
         </table>`;
