@@ -31,7 +31,7 @@ const productos = [
     tipo: "industrial"},
     {id:6, 
     nombre:"Hamburguesa Paty clásico 4 u.", 
-    imagen: "https://carrefourar.vtexassets.com/arquivos/ids/196178-1200-auto?v=637522913484630000&width=1200&height=auto&aspect=true" , 
+    imagen: "" , 
     precio:1090.00 , 
     marca:"PATY" , 
     tipo: "industrial"},
