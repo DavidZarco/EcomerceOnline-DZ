@@ -29,6 +29,20 @@ function renderProductos(){
     document.getElementById("contenido").innerHTML = contenido;
 };
 
+const pedirProductos = () => {
+    document.getElementById("contenido").innerHTML = `<div class="d-flex align-items-center text-danger">
+    <h2>Cargando productos...</h2>
+    <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+  </div>`;
+    
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            resolve(productos);
+        }, 1000);
+    })
+}
+pedirProductos().then(resultado => {
+    renderProductos(resultado);
+});
 
-renderProductos();
 renderBotonCarrito();
