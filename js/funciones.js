@@ -75,8 +75,8 @@ function sumaTotalProductos() {
 
 function renderBotonCarrito() {
     let botonCarrito = document.getElementById("botonCarrito");
-    let contenido = `<button type="button" class="btn bg-light position-relative">
-    <img src="../images/botoncarrito.svg" alt="Carrito" width="32">
+    let contenido = `<button type="button" class="btn position-relative">
+    <img src="https://e7.pngegg.com/pngimages/833/426/png-clipart-shopping-cart-shopping-cart.png" alt="Carrito" height="50" width="50px">
     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
     ${cantidadTotalProductos()}
     </span>
