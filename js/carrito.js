@@ -24,7 +24,7 @@ function renderProductos() {
         <td>&nbsp;</td>
         <td colspan="2">Saldo Total</td>
         <td class="text-end"><b>$${sumaTotalProductos().toFixed(2)}</b></td>    
-        <td>&nbsp;</td>
+        <td class="text-end"><button onclick="comprarProductos()">COMPRAR</button></td>
         </tr>
         </table>`;
     } else {
@@ -34,6 +34,23 @@ function renderProductos() {
     document.getElementById("contenido").innerHTML = contenido;
 };
 
+const comprarProductos = () => {
+
+    Swal.fire({
+        title: 'Estas seguro que deseas comprar todos los articulos del carrito ?',
+        showDenyButton: true,
+        confirmButtonText: 'Confirmar',
+        denyButtonText: `Rechazar`,
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire('Compra exitosa pasando a pantalla de pagos.', '', 'success')
+            location.href = "../pages/pagos.html"; //Redireccionar a la página pasada por parámetro
+        } else if (result.isDenied) {
+            Swal.fire('Regresando al carrito.', '', 'error')
+        }
+    })
+}
 renderProductos();
 renderBotonCarrito();
 
