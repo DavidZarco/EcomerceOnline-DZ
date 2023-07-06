@@ -31,7 +31,7 @@ const productos = [
     tipo: "industrial"},
     {id:6, 
     nombre:"Hamburguesa Paty clásico 4 u.", 
-    imagen: "" , 
+    imagen: "https://superlago.com.ar/wp-content/uploads/2020/12/7790670050650.jpg" , 
     precio:1090.00 , 
     marca:"PATY" , 
     tipo: "industrial"},

@@ -123,7 +123,6 @@ function filtrarProductosConCheck (){
     let check6 = document.getElementById("checkCasera");
     let check7 = document.getElementById("checkIndustrial");
 
-    console.log("CON CHEK");
     let contenido = "";
     
     productos = productos.filter(item => (check1.checked && item.marca === check1.value) || (check2.checked && item.marca === check2.value) || (check3.checked && item.marca === check3.value) || (check4.checked && item.marca === check4.value) || (check5.checked && item.marca === check5.value)) ;
