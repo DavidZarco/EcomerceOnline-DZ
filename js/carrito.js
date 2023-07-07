@@ -35,21 +35,19 @@ function renderProductos() {
 };
 
 const comprarProductos = () => {
-
     Swal.fire({
         title: 'Estas seguro que deseas comprar todos los articulos del carrito ?',
         showDenyButton: true,
         confirmButtonText: 'Confirmar',
         denyButtonText: `Rechazar`,
     }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
             Swal.fire('Compra exitosa pasando a pantalla de pagos.', '', 'success')
-            location.href = "../pages/pagos.html"; //Redireccionar a la página pasada por parámetro
+            setTimeout( function() { window.location.href = "../pages/pagos.html"; }, 3000 );
         } else if (result.isDenied) {
             Swal.fire('Regresando al carrito.', '', 'error')
         }
-    })
+    })    
 }
 renderProductos();
 renderBotonCarrito();
